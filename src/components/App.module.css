@@ -1,0 +1,12 @@
+.container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.container h1 {
+  text-align: center;
+}
+.contactList h2 {
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+.findZone {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 600;
+}
