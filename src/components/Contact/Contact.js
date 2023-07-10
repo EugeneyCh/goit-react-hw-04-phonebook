@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import css from './Contact.module.css';
 
 function Contact({ contacts, onDeleteContact }) {
-  // const { contacts, onDeleteContact } = this.props;
   return contacts.map(({ id, name, number }) => (
     <li key={id} className={css.contactRow}>
       {name}:{number}{' '}

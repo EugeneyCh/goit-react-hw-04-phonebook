@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
-function ContactForm({ formSubmitHandler }) {
+function ContactForm({ onSubmit }) {
   const [user, setUser] = useState('');
   const [number, setNumber] = useState('');
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
-    console.log(e.target);
-    console.log('User=', name, 'Value=', value);
+    // console.log(e.target);
+    console.log('Name of field=', name, 'Value=', value);
     switch (name) {
       case 'name':
         setUser(value);
@@ -23,13 +23,15 @@ function ContactForm({ formSubmitHandler }) {
   };
   const handleFormSubmit = e => {
     e.preventDefault();
-    formSubmitHandler;
-    // onSubmit(this.state);
+    console.log('New data = ', user, number);
+
+    onSubmit(user, number);
+    // onSubmit(state);
     reset();
   };
   const reset = () => {
-    setUser = '';
-    setNumber = '';
+    setUser('');
+    setNumber('');
   };
 
   return (

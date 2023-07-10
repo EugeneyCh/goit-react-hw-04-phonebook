@@ -17,15 +17,6 @@ function App() {
     ],
   });
   const [filter, setFilter] = useState('');
-  // state = {
-  //   contacts: [
-  //     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  //     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  //     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  //     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  //   ],
-  //   filter: '',
-  // };
 
   useEffect(() => {
     console.log('App componentDidMount');
@@ -35,7 +26,10 @@ function App() {
       setState({ contacts: parsedContacts });
     }
   }, []);
+
   useEffect(() => {
+    console.log('App componentDidUpdate');
+
     localStorage.setItem('contacts', JSON.stringify(state.contacts));
   }, [state.contacts]);
 
@@ -51,7 +45,9 @@ function App() {
   };
 
   const checkNameToSame = name => {
+    console.log('Name in line 57 = ', name);
     const lowerCaseNewName = name.toLowerCase();
+    console.log('Name in line 59 = ', lowerCaseNewName);
     return state.contacts.some(
       contact => contact.name.toLowerCase() === lowerCaseNewName
     );
@@ -64,7 +60,7 @@ function App() {
   };
 
   const changeFilter = e => {
-    setFilter: e.currentTarget.value;
+    setFilter(e.currentTarget.value);
   };
 
   const getVisibleContacts = () => {
