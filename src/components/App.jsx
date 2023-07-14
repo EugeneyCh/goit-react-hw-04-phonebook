@@ -45,9 +45,9 @@ function App() {
   };
 
   const checkNameToSame = name => {
-    console.log('Name in line 57 = ', name);
+    console.log('Name in line 47 = ', name);
     const lowerCaseNewName = name.toLowerCase();
-    console.log('Name in line 59 = ', lowerCaseNewName);
+    console.log('Name in line 49 = ', lowerCaseNewName);
     return state.contacts.some(
       contact => contact.name.toLowerCase() === lowerCaseNewName
     );
