@@ -19,7 +19,6 @@ function App() {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    console.log('App componentDidMount');
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
     if (parsedContacts) {
@@ -28,12 +27,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log('App componentDidUpdate');
-
     localStorage.setItem('contacts', JSON.stringify(state.contacts));
   }, [state.contacts]);
 
-  const formSubmitHandler = ({ name, number }) => {
+  const formSubmitHandler = (name, number) => {
     const newContact = {
       id: nanoid(),
       name,
@@ -45,9 +42,7 @@ function App() {
   };
 
   const checkNameToSame = name => {
-    console.log('Name in line 47 = ', name);
     const lowerCaseNewName = name.toLowerCase();
-    console.log('Name in line 49 = ', lowerCaseNewName);
     return state.contacts.some(
       contact => contact.name.toLowerCase() === lowerCaseNewName
     );
@@ -64,7 +59,6 @@ function App() {
   };
 
   const getVisibleContacts = () => {
-    // const { filter, contacts } = this.state;
     const normalizedFilter = filter.toLowerCase();
 
     return state.contacts.filter(contact =>
@@ -77,8 +71,6 @@ function App() {
       contacts: state.contacts.filter(contact => contact.id !== contactId),
     }));
   };
-
-  // const { filter } = this.state;
 
   const visibleContacts = getVisibleContacts();
 

@@ -8,8 +8,6 @@ function ContactForm({ onSubmit }) {
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
-    // console.log(e.target);
-    console.log('Name of field=', name, 'Value=', value);
     switch (name) {
       case 'name':
         setUser(value);
@@ -26,7 +24,6 @@ function ContactForm({ onSubmit }) {
     console.log('New data = ', user, number);
 
     onSubmit(user, number);
-    // onSubmit(state);
     reset();
   };
   const reset = () => {
