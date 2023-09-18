@@ -1,7 +1,7 @@
 .formEditor {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 60%;
   padding: 15px;
   border: 1px solid black;
@@ -16,6 +16,8 @@
 }
 
 .inputArea {
+  height: 30px;
+  line-height: 1.2;
   margin: 15px 0;
 }
 .contactButton {

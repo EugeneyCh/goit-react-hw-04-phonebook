@@ -1,4 +1,6 @@
 .contactRow {
   display: flex;
+  justify-content: space-between;
+  width: 640px;
   gap: 15px;
 }

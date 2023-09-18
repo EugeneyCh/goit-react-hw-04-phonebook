@@ -6,7 +6,12 @@ function Filter({ value, onChange }) {
   return (
     <label className={css.findZone}>
       Find contacts by name
-      <input type="text" value={value} onChange={onChange} />
+      <input
+        className={css.findInput}
+        type="text"
+        value={value}
+        onChange={onChange}
+      />
     </label>
   );
 }

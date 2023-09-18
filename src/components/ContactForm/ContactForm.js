@@ -22,10 +22,10 @@ function ContactForm({ onSubmit }) {
   const handleFormSubmit = e => {
     e.preventDefault();
     console.log('New data = ', user, number);
-
     onSubmit(user, number);
     reset();
   };
+
   const reset = () => {
     setUser('');
     setNumber('');
@@ -39,7 +39,7 @@ function ContactForm({ onSubmit }) {
           className={css.inputArea}
           type="text"
           name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           value={user}
@@ -52,7 +52,8 @@ function ContactForm({ onSubmit }) {
           className={css.inputArea}
           type="tel"
           name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          pattern="\+?[0-9\s-()]+"
+          // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           value={number}
@@ -67,9 +68,9 @@ function ContactForm({ onSubmit }) {
 }
 
 ContactForm.propTypes = {
-  handleFormSubmit: PropTypes.func.isRequired,
+  // handleFormSubmit: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  // handleChange: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

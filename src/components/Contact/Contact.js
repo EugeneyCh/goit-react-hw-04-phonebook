@@ -5,7 +5,8 @@ import css from './Contact.module.css';
 function Contact({ contacts, onDeleteContact }) {
   return contacts.map(({ id, name, number }) => (
     <li key={id} className={css.contactRow}>
-      {name}:{number}{' '}
+      <span>{name}:</span>
+      <span>tel:{number}</span>
       <button onClick={() => onDeleteContact(id)}>Delete</button>
     </li>
   ));
